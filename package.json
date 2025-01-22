@@ -1,0 +1,19 @@
+{
+  "name": "cse341.project2",
+  "version": "1.0.0",
+  "description": "My Second Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaylafoley/cse341.project2.git"
+  },
+  "author": "Shayla Foley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaylafoley/cse341.project2/issues"
+  },
+  "homepage": "https://github.com/shaylafoley/cse341.project2#readme"
+}
