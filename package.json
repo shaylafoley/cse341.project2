@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/shaylafoley/cse341.project2/issues"
   },
-  "homepage": "https://github.com/shaylafoley/cse341.project2#readme"
+  "homepage": "https://github.com/shaylafoley/cse341.project2#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
