@@ -15,7 +15,8 @@ Content-Type: application/json
     "birthday":"April 1",
     "email":"aWeaver@test.com",
     "jobTitle":"programmer",
-    "MarriedOrSingle":"married"
+    "MarriedOrSingle":"married",
+    "favoriteColor":"Orange"
 }
 
 ### PUT contact
@@ -28,7 +29,8 @@ Content-Type: application/json
     "birthday":"June 8",
     "email":"rClark@test.com",
     "jobTitle":"nurse",
-    "MarriedOrSingle":"single"
+    "MarriedOrSingle":"single",
+    "favoriteColor":"Red"
 }
 
 ### DELETE contact

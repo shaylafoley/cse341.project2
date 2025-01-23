@@ -28,7 +28,8 @@ const createContact =async(req, res) => {
         birthday: req.body.birthday,
         email: req.body.email,
         jobTitle: req.body.jobTitle,
-        MarriedOrSingle: req.body.MarriedOrSingle
+        MarriedOrSingle: req.body.MarriedOrSingle,
+        favoriteColor: req.body.favoriteColor
     };
     const response = await mongodb.getDatabase().db().collection('contacts').insertOne(contact);
     if (response.acknowledged) {
@@ -49,7 +50,8 @@ const updateContact =async(req, res) => {
         birthday: req.body.birthday,
         email: req.body.email,
         jobTitle: req.body.jobTitle,
-        MarriedOrSingle: req.body.MarriedOrSingle
+        MarriedOrSingle: req.body.MarriedOrSingle,
+        favoriteColor: req.body.favoriteColor
     };
     const response = await mongodb.getDatabase().db().collection('contacts').replaceOne({_id: contactId}, contact);
     if (response.modifiedCount > 0) {
