@@ -65,7 +65,7 @@ const deleteContact = async (req, res) => {
     //#swagger.tags=['Contacts']
     const contactId = new ObjectId(req.params.id);
     
-    const response = await mongodb.getDatabase().db().collection('contacts').deleteOne({ _id: userId });
+    const response = await mongodb.getDatabase().db().collection('contacts').deleteOne({ _id: contactId });
     if (response.deletedCount > 0) {
         res.status(204).send();
     } else {
