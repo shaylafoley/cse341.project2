@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/shaylafoley/cse341.project2#readme",
   "dependencies": {
+    "body-parser": "^1.20.3",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "mongodb": "^6.12.0"
