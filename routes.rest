@@ -28,10 +28,10 @@ Content-Type: application/json
     "lastName":"Clark",
     "birthday":"June 8",
     "email":"rClark@test.com",
-    "jobTitle":"nurse",
+    "jobTitle":"nurse assistant",
     "MarriedOrSingle":"single",
     "favoriteColor":"Red"
 }
 
 ### DELETE contact
-DELETE http://localhost:3000/contacts/6791ad2da9587eb14fcb2512
+DELETE http://localhost:3000/contacts/6793eaf2d49751af641a94f3

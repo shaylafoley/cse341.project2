@@ -1,21 +1,17 @@
 const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
-const getAll = (req, res) => {
+const getAll = async (req, res) => {
     //#swagger.tags=['Contacts']
-    mongodb
-      .getDb()
-      .db()
-      .collection('contacts')
-      .find()
-      .toArray((err, lists) => {
-        if (err) {
-          res.status(400).json({ message: err });
-        }
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(lists);
-      });
-  };
+    try {
+        const result = await mongodb.getDatabase().db().collection('contacts').find()
+        .toArray();
+         res.setHeader('Content-Type', 'application/json');
+         res.status(200).json(result);
+    }  catch (error) {
+        res.status(400).json({ message: err });
+    }
+  }
 
 // const getAll = async (req, res) => {
 //     //#swagger.tags=['Contacts']
@@ -26,23 +22,20 @@ const getAll = (req, res) => {
 //     });
 // };
 
-const getSingle = (req, res) => {
-    if (!ObjectId.isValid(req.params.id)) {
+const getSingle = async (req, res) => {
+    //#swagger.tags=['Contacts']
+    try {
+        if (!ObjectId.isValid(req.params.id)) {
       res.status(400).json('Must use a valid contact id to find a contact.');
     }
-    const userId = new ObjectId(req.params.id);
-    mongodb
-      .getDb()
-      .db()
-      .collection('contacts')
-      .find({ _id: userId })
-      .toArray((err, result) => {
-        if (err) {
-          res.status(400).json({ message: err });
-        }
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(result[0]);
-      });
+    const contactId = new ObjectId(req.params.id);
+    const result = await mongodb.getDatabase().db().collection('contacts').find({ _id: contactId})
+     .toArray();
+         res.setHeader('Content-Type', 'application/json');
+         res.status(200).json(result[0]);
+    } catch (error)  {
+          res.status(400).json({ message: error.message });
+      }
   };
 // const getSingle = async (req, res) => {
 //     //#swagger.tags=['Contacts']
