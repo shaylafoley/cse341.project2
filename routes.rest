@@ -28,13 +28,13 @@ Content-Type: application/json
     "lastName":"Clark",
     "birthday":"June 8",
     "email":"rClark@test.com",
-    "jobTitle":"nurse assistant",
+    "jobTitle":"nurse",
     "MarriedOrSingle":"single",
     "favoriteColor":"Red"
 }
 
 ### DELETE contact
-DELETE http://localhost:3000/contacts/6794f00c45ce66a6aafbc11a
+DELETE http://localhost:3000/contacts/679545764ffb95d920987c6d
 
 
 
@@ -64,8 +64,8 @@ Content-Type: application/json
     "title": "The Hobbit",
     "author": "JR Tolken",
     "genre": "fantasy",
-    "yearPublished": "1910"
+    "yearPublished": "1900"
 }
 
 ### DELETE book
-DELETE http://localhost:3000/books/6794f42d4df365aabe9650a4
+DELETE http://localhost:3000/books/679545f64ffb95d920987c6e
