@@ -5,7 +5,7 @@
     "description": "Uses Api",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "/project2-9pb4.onrender.com",
   "basePath": "/",
   "schemes": [
     "http"
