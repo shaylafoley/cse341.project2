@@ -8,20 +8,20 @@ router.use('/', require('./swagger'));
 router.use('/contacts', require('./contacts'));
 router.use('/books', require('./books'));
 
-// GitHub Login Route
-router.get('/login', passport.authenticate('github'));
+// 🔹 GitHub Login Route (Force Authentication)
+router.get('/login', passport.authenticate('github', { scope: ['user:email'] }));
 
-// GitHub Authentication Callback
+// 🔹 GitHub Authentication Callback
 router.get('/github/callback', 
     passport.authenticate('github', { failureRedirect: '/' }),
     (req, res) => {
         console.log("GitHub Auth Success:", req.user); // Debugging log
-        req.session.user = req.user; // Save user session
-        res.redirect('/'); // Redirect to homepage or dashboard
+        req.session.user = req.user; // Store user in session
+        res.redirect('/'); // Redirect to homepage
     }
 );
 
-// Logout Route
+// 🔹 Logout Route
 router.get('/logout', (req, res) => {
     req.session.destroy((err) => {
         if (err) {
@@ -33,6 +33,7 @@ router.get('/logout', (req, res) => {
 });
 
 module.exports = router;
+
 
 
 // const passport = require('passport');
