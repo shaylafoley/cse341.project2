@@ -4,14 +4,16 @@ const router = express.Router();
 const contactsController = require('../controllers/books');
 const validation = require('../middleware/validate')
 
+const { isAuthenticated } = require('../middleware/authenticate');
+
 router.get('/', contactsController.getAllBooks);
 
 router.get('/:id', contactsController.getSingleBook);
 
-router.post('/', validation.saveBook, contactsController.createBook);
+router.post('/', isAuthenticated, validation.saveBook, contactsController.createBook);
 
-router.put('/:id', validation.saveBook, contactsController.updateBook);
+router.put('/:id', isAuthenticated, validation.saveBook, contactsController.updateBook);
 
-router.delete('/:id', contactsController.deleteBook);
+router.delete('/:id', isAuthenticated, contactsController.deleteBook);
 
 module.exports = router;
